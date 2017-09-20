@@ -1,5 +1,5 @@
 # buymeabeer
-"Buy" me a beer mining some monero :)
+*Buy* me a beer mining some monero :)
 
 Making use of the awesome idea [coin-hive.com](https://coin-hive.com), this is a *sample* concept page for a new *Donate* link approach!
 
