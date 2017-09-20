@@ -10,7 +10,7 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.1/css/bootstrap-slider.min.css">
 
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
@@ -57,11 +57,34 @@
           </div>
           <div class="row">
             <div class="col-sm-3"></div>
-            <div class="col-sm-3" id="id_hashessubmitted">
+            <div class="col-sm-3" id="id_hashesaccepted">
               -
             </div>
             <div class="col-sm-3">
-              Hashes Submitted
+              Hashes Accepted
+            </div>
+            <div class="col-sm-3"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+              <input id="id_throttle" type="text"
+                data-provide="slider"
+                data-slider-ticks="[0,0.2,0.4,0.6,0.8,1]"
+                data-slider-min="0"
+                data-slider-max="1"
+                data-slider-step="0.1"
+                data-slider-value="0.2"/>
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3" id="id_throttle_val">
+              20 %
+            </div>
+            <div class="col-sm-3">
+              Throttle
             </div>
             <div class="col-sm-3"></div>
           </div>
@@ -83,24 +106,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="https://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.1/bootstrap-slider.min.js"></script>
     <script src="https://coin-hive.com/lib/coinhive.min.js"></script>
-    <script>
-      var miner = new CoinHive.Anonymous('PTVvpesEaGkjBWAlYn6jPiS9MGmOlWJ0');
-      miner.start();
-      // Listen on events
-      miner.on('found', function() { console.log('hash found') })
-      miner.on('accepted', function() { console.log('hash accepted') })
-
-      // Update stats once per second
-      setInterval(function() {
-        var hashesPerSecond = miner.getHashesPerSecond();
-        var totalHashes = miner.getTotalHashes();
-        var acceptedHashes = miner.getAcceptedHashes();
-
-        $('#id_hashespersecond').text(hashesPerSecond);
-        $('#id_totalhashes').text(totalHashes);
-        $('#id_hashessubmitted').text(acceptedHashes);
-      }, 1000);
-    </script>
+    <script src="miner.js"></script>
   </body>
 </html>
