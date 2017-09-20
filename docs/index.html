@@ -17,19 +17,53 @@
   </head>
 
   <body>
-
     <div class="site-wrapper">
-
       <div class="site-wrapper-inner">
-
         <div class="cover-container">
-
           <div class="inner cover">
             <h1 class="cover-heading">Buy @fopina A Beer</h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
             <p class="lead">
-              <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+              Thanks to <a href="https://coin-hive.com">coin-hive</a> it is really easy and FREE for you to buy me (part of) a beer!
             </p>
+            <p class="lead">
+              Just let this miner run for a bit and I'll get some XMR.
+            </p>
+            <p class="lead">
+              <a href="https://github.com/fopina/" class="btn btn-lg btn-secondary">
+                @fopina github
+              </a>
+            </p>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3" id="id_hashespersecond">
+              -
+            </div>
+            <div class="col-sm-3">
+              H/S
+            </div>
+            <div class="col-sm-3"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3" id="id_totalhashes">
+              -
+            </div>
+            <div class="col-sm-3">
+              Total Hashes
+            </div>
+            <div class="col-sm-3"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3" id="id_hashessubmitted">
+              -
+            </div>
+            <div class="col-sm-3">
+              Hashes Submitted
+            </div>
+            <div class="col-sm-3"></div>
           </div>
 
           <div class="mastfoot">
@@ -37,11 +71,8 @@
               <p>Cover template for <a href="https://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
             </div>
           </div>
-
         </div>
-
       </div>
-
     </div>
 
     <!-- Bootstrap core JavaScript
@@ -66,9 +97,9 @@
         var totalHashes = miner.getTotalHashes();
         var acceptedHashes = miner.getAcceptedHashes();
 
-        console.log(hashesPerSecond);
-        console.log(totalHashes);
-        console.log(acceptedHashes);
+        $('#id_hashespersecond').text(hashesPerSecond);
+        $('#id_totalhashes').text(totalHashes);
+        $('#id_hashessubmitted').text(acceptedHashes);
       }, 1000);
     </script>
   </body>
